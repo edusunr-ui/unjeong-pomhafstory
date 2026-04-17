@@ -1,0 +1,35 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 300" role="img" aria-labelledby="title desc">
+  <title id="title">수학의힘 외대HS 2관 위치 지도</title>
+  <desc id="desc">산내중학교와 운정센트레빌 인근 교하로 87 삼성프라자 4층 위치를 표시한 지도 이미지</desc>
+  <rect width="620" height="300" fill="#f5f4ef"/>
+  <g opacity="0.86">
+    <path d="M0 210 L620 142" stroke="#fff" stroke-width="60"/>
+    <path d="M0 210 L620 142" stroke="#d7dce2" stroke-width="2"/>
+    <path d="M118 0 L215 300" stroke="#fff" stroke-width="46"/>
+    <path d="M118 0 L215 300" stroke="#d7dce2" stroke-width="2"/>
+    <path d="M330 0 L270 300" stroke="#fff" stroke-width="38"/>
+    <path d="M330 0 L270 300" stroke="#d7dce2" stroke-width="2"/>
+  </g>
+  <g fill="#eadbc9" stroke="#e4cdb6" stroke-width="1">
+    <rect x="215" y="36" width="104" height="78" rx="4"/>
+    <rect x="360" y="26" width="116" height="84" rx="4"/>
+    <rect x="438" y="160" width="110" height="70" rx="4"/>
+    <rect x="80" y="38" width="104" height="78" rx="4" fill="#dfeaf3" stroke="#d3dee8"/>
+  </g>
+  <g font-family="Malgun Gothic, Arial, sans-serif" font-size="14" fill="#6e7e91">
+    <text x="104" y="74" text-anchor="middle" fill="#5b83c8">산들초등학교</text>
+    <text x="82" y="172">운정센트레빌</text>
+    <text x="235" y="106" fill="#c47454">투썸플레이스</text>
+    <text x="392" y="120" fill="#c46f58">기대플러스 병원</text>
+    <text x="416" y="176" fill="#b86f51">밤맨 아라보쌈</text>
+    <text x="342" y="160" fill="#6e7e91">크노리오</text>
+  </g>
+  <g transform="translate(280 132)">
+    <path d="M0 0 C-24 0 -43 19 -43 43 C-43 75 0 112 0 112 C0 112 43 75 43 43 C43 19 24 0 0 0Z" fill="#f45d4f" filter="url(#shadow)"/>
+    <circle cx="0" cy="42" r="10" fill="#fff"/>
+  </g>
+  <text x="280" y="224" text-anchor="middle" font-family="Malgun Gothic, Arial, sans-serif" font-size="18" font-weight="800" fill="#202938">수학의힘</text>
+  <text x="280" y="248" text-anchor="middle" font-family="Malgun Gothic, Arial, sans-serif" font-size="18" font-weight="800" fill="#202938">외대HS</text>
+  <text x="280" y="272" text-anchor="middle" font-family="Malgun Gothic, Arial, sans-serif" font-size="18" font-weight="800" fill="#202938">2관학원</text>
+  <defs><filter id="shadow" x="-30%" y="-20%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#c84a3f" flood-opacity="0.22"/></filter></defs>
+</svg>
