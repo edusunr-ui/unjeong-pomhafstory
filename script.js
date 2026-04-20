@@ -358,9 +358,12 @@ function enhanceHomePage() {
           <p class="section-heading__eyebrow">Popular Search</p>
           <h2>학부모님이 많이 찾는 지역별 페이지</h2>
         </div>
-        <p class="page-summary__caption">메뉴는 깔끔하게 유지하고, 필요한 검색 페이지는 이곳에서 바로 이동할 수 있도록 정리했습니다.</p>
       </div>
       <div class="tag-chip-row">
+        <a class="tag-chip tag-chip--brand" href="math-intro.html">수학의힘</a>
+        <a class="tag-chip tag-chip--brand" href="hs-intro.html">외대HS어학원</a>
+        <a class="tag-chip tag-chip--brand" href="science-intro.html">과학의힘</a>
+        <a class="tag-chip tag-chip--brand" href="readingplus-intro.html">리딩플러스</a>
         <a class="tag-chip" href="seo-unjeong-math.html">운정 수학학원</a>
         <a class="tag-chip" href="seo-sannae-math.html">산내마을 수학학원</a>
         <a class="tag-chip" href="seo-haeoreum-math.html">해오름마을 수학학원</a>
