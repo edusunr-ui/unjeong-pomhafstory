@@ -1,4 +1,4 @@
-﻿const NOTICE_DETAILS = {
+const NOTICE_DETAILS = {
   '1': { category: '학원 공지', title: '3관 상담실 운영 시작 안내', date: '2026-03-18', views: '87', body: ['운정 수학의힘∫외대HS어학원 3관 상담실 운영이 시작되었습니다.', '브랜드별 상담 동선을 분산해 더욱 안정적이고 편안한 상담 환경을 제공하며, 학년별 상담 일정 조율도 이전보다 빠르게 진행됩니다.', '상담 전 사전 예약을 남겨 주시면 학생 학년과 관심 과목에 맞는 프로그램 설명을 더 정확하게 안내해 드릴 수 있습니다.'] },
   '2': { category: '수업 안내', title: '수학의힘 주말 심화 특강 신청 안내', date: '2026-03-22', views: '109', body: ['수학의힘 주말 심화 특강은 고난도 유형 정리, 서술형 정리, 취약 유형 보완을 중심으로 운영됩니다.', '현재 반별 진도와 학생별 약점을 반영해 특강 난이도가 구성되며, 내신과 심화 학습을 함께 준비해야 하는 학생에게 특히 적합합니다.', '신청 인원은 반별 정원에 따라 조기 마감될 수 있으므로 데스크 또는 상담 페이지를 통해 미리 문의해 주세요.'] },
   '3': { category: '학원 공지', title: '외대HS어학원 3월 말 학습 리포트 발송 안내', date: '2026-03-29', views: '73', body: ['외대HS어학원 재원생 대상 3월 말 학습 리포트가 순차 발송됩니다.', '리포트에는 교과서 본문 이해도, 문법 보완 포인트, 서술형 작성 흐름, 다음 달 학습 포인트가 함께 정리됩니다.', '리포트 수령 후 상담을 원하시는 경우 학원으로 연락 주시면 개별 상담 일정을 안내해 드립니다.'] },
@@ -53,10 +53,9 @@ function renderSiteChrome() {
                   <a href="readingplus-intro.html" data-nav-page="readingplus-intro">리딩플러스</a>
                 </section>
                 <section>
-                  <h3>Programs</h3>
-                  <a href="class-features.html#math-system" data-nav-page="features">내신 대비</a>
-                  <a href="class-features.html#math-system" data-nav-page="features">수학 내 시스템</a>
-                  <a href="class-features.html#english-system" data-nav-page="features">영어 내 시스템</a>
+                  <h3>Curriculum</h3>
+                  <a href="class-features.html#math-system" data-nav-page="features">수학 커리큘럼</a>
+                  <a href="class-features.html#english-system" data-nav-page="features">영어 커리큘럼</a>
                 </section>
                 <section>
                   <h3>Popular Search</h3>
