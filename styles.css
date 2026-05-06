@@ -850,6 +850,11 @@ img {
     padding: 22px 18px;
   }
 
+  .company-hero-title {
+    font-size: clamp(2.15rem, 9vw, 3.15rem) !important;
+    line-height: 1.05 !important;
+  }
+
   .math-curriculum-section .section-heading,
   .english-curriculum-section .section-heading {
     gap: 14px;
@@ -919,6 +924,10 @@ img {
   margin: 12px 0 0;
   font-size: clamp(2.7rem, 5vw, 4.3rem);
   line-height: 1.04;
+}
+
+.company-hero-title {
+  text-wrap: balance;
 }
 
 .notice-board,
@@ -3779,6 +3788,23 @@ img {
   margin: 0;
   color: #526077;
   line-height: 1.75;
+}
+
+.academy-guide-preview--pages {
+  align-content: start;
+}
+
+.academy-guide-pages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.academy-guide-pages .academy-guide-preview__button img {
+  aspect-ratio: auto;
+  min-height: 280px;
+  object-fit: cover;
+  background: #ffffff;
 }
 
 .scroll-top-button {
@@ -9312,6 +9338,14 @@ img {
 
   .academy-guide-preview {
     padding: 18px;
+  }
+
+  .academy-guide-pages {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-guide-pages .academy-guide-preview__button img {
+    min-height: auto;
   }
 
   .scroll-top-button {

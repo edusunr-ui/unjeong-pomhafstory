@@ -152,6 +152,7 @@ async function hydrateSocialFeed() {
 
 function enhanceHomePage() {
   if (document.body.dataset.page !== 'home') return;
+  const shouldUseDesktopFlow = window.innerWidth > 720;
 
   const setText = (selector, text, html = false) => {
     const el = document.querySelector(selector);
@@ -176,7 +177,7 @@ function enhanceHomePage() {
   const mainProjectSection = eyebrowSections.get('Main Project');
   const systemSection = eyebrowSections.get('System');
 
-  if (parentSection && !document.querySelector('.ps-flow-section')) {
+  if (shouldUseDesktopFlow && parentSection && !document.querySelector('.ps-flow-section')) {
     const flowSection = document.createElement('section');
     flowSection.className = 'section page-width ps-flow-section';
     flowSection.innerHTML = `
@@ -262,6 +263,10 @@ function enhanceHomePage() {
     solutionSection?.remove();
     mainProjectSection?.remove();
     systemSection?.remove();
+  }
+
+  if (!shouldUseDesktopFlow) {
+    document.querySelector('.ps-flow-section')?.remove();
   }
 
   eyebrowSections.get('By Grade')?.remove();
