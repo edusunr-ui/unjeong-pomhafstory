@@ -1475,6 +1475,7 @@ img {
 }
 
 .footer--brand {
+  display: block;
   margin-top: 60px;
   padding: 26px 0 42px;
   background: #10283f;
@@ -1537,6 +1538,10 @@ img {
 }
 
 .footer__copyright {
+  display: block;
+  width: min(calc(100% - 40px), 1280px);
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 28px;
   padding-top: 18px;
   border-top: 1px solid rgba(255,255,255,0.12);
@@ -1552,7 +1557,9 @@ img {
   }
 
   .campus-grid--detailed,
-  .footer__info-grid {
+  .footer__info-grid,
+  .consultation-campus-grid--featured,
+  .academy-guide-grid {
     grid-template-columns: 1fr;
   }
 
@@ -3645,20 +3652,48 @@ img {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.consultation-campus-grid--featured {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.consultation-campus-section .section-heading {
+  margin-bottom: 22px;
+}
+
+.consultation-campus-card {
+  min-height: 100%;
+  padding: 32px;
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,248,255,0.96));
+  box-shadow: 0 26px 60px rgba(19,38,84,0.12);
+}
+
+.consultation-campus-card strong {
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+}
+
+.consultation-campus-card p {
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
 .consultation-channel-card {
   background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,248,255,0.96));
 }
 
 .consultation-link-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+  margin-top: 20px;
 }
 
 .consultation-link-list a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  padding: 0 14px;
+  min-height: 52px;
+  padding: 0 18px;
   border-radius: 999px;
   background: linear-gradient(135deg, rgba(31,111,229,0.14), rgba(31,111,229,0.08));
   border: 1px solid rgba(31,111,229,0.16);
@@ -3671,10 +3706,28 @@ img {
 
 .consultation-link-list a:hover,
 .consultation-link-list a:focus-visible {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.01);
   background: linear-gradient(135deg, #1f6fe5, #1658b5);
   color: #fff;
   box-shadow: 0 16px 30px rgba(19,38,84,0.16);
+}
+
+.academy-guide-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.academy-guide-card {
+  min-height: 100%;
+  padding: 30px;
+}
+
+.academy-guide-card__actions {
+  margin-top: 22px;
+}
+
+.academy-guide-card .button {
+  width: 100%;
+  justify-content: center;
 }
 
 .hero-note-card {
@@ -9133,4 +9186,19 @@ img {
 .hs-unjeong-page main,
 .hs-unjeong-page main *:not(img) {
   font-family: 'Paperlogy', 'Malgun Gothic', sans-serif !important;
+}
+
+@media (max-width: 720px) {
+  .consultation-link-list {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-campus-card {
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  .consultation-campus-card strong {
+    font-size: 1.75rem;
+  }
 }

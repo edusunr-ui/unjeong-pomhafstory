@@ -1,11 +1,4 @@
-const NOTICE_DETAILS = {
-  '1': { category: '학원 공지', title: '3관 상담실 운영 시작 안내', date: '2026-03-18', views: '87', body: ['운정 수학의힘∫외대HS어학원 3관 상담실 운영이 시작되었습니다.', '브랜드별 상담 동선을 분산해 더욱 안정적이고 편안한 상담 환경을 제공하며, 학년별 상담 일정 조율도 이전보다 빠르게 진행됩니다.', '상담 전 사전 예약을 남겨 주시면 학생 학년과 관심 과목에 맞는 프로그램 설명을 더 정확하게 안내해 드릴 수 있습니다.'] },
-  '2': { category: '수업 안내', title: '수학의힘 주말 심화 특강 신청 안내', date: '2026-03-22', views: '109', body: ['수학의힘 주말 심화 특강은 고난도 유형 정리, 서술형 정리, 취약 유형 보완을 중심으로 운영됩니다.', '현재 반별 진도와 학생별 약점을 반영해 특강 난이도가 구성되며, 내신과 심화 학습을 함께 준비해야 하는 학생에게 특히 적합합니다.', '신청 인원은 반별 정원에 따라 조기 마감될 수 있으므로 데스크 또는 상담 페이지를 통해 미리 문의해 주세요.'] },
-  '3': { category: '학원 공지', title: '외대HS어학원 3월 말 학습 리포트 발송 안내', date: '2026-03-29', views: '73', body: ['외대HS어학원 재원생 대상 3월 말 학습 리포트가 순차 발송됩니다.', '리포트에는 교과서 본문 이해도, 문법 보완 포인트, 서술형 작성 흐름, 다음 달 학습 포인트가 함께 정리됩니다.', '리포트 수령 후 상담을 원하시는 경우 학원으로 연락 주시면 개별 상담 일정을 안내해 드립니다.'] },
-  '4': { category: '수업 안내', title: '고등부 내신 대비 보강 시간표 공지', date: '2026-04-01', views: '151', body: ['고등부 내신 대비 보강은 학교별 시험 범위와 일정에 맞춰 일부 시간표가 조정됩니다.', '수학은 빈출 유형 정리와 기출 문제 풀이 중심으로, 영어는 교과서 본문과 문법 보완 및 서술형 writing 연습 중심으로 운영됩니다.', '세부 시간표는 각 반 공지와 데스크 안내를 통해 다시 전달드리겠습니다.'] },
-  '5': { category: '상담 안내', title: '중등부 4월 학부모 상담 주간 운영 안내', date: '2026-04-05', views: '94', body: ['중등부 학부모 상담 주간은 4월 둘째 주부터 순차 진행됩니다.', '학생별 최근 학습 상태, 중간고사 준비 흐름, 취약 과목 보완 계획, 수학의힘 쿼터테스트와 외대HS 먼슬리테스트 결과를 함께 설명드립니다.', '상담 시간은 개별 조율로 진행되며 상담 신청 페이지를 통해 우선 예약하실 수 있습니다.'] },
-  '6': { category: '학원 공지', title: '2026 여름학기 반 편성 및 개강 일정 안내', date: '2026-04-08', views: '128', body: ['2026 여름학기 반 편성과 개강 일정을 안내드립니다.', '학생별 반 편성은 최근 상담 내용, 학교별 진도, 학습 성취도, 프로그램 적합성을 기준으로 순차적으로 안내됩니다.', '최종 시간표와 반 배정 결과는 개별 연락으로 전달드리며, 조정이 필요한 경우 상담실에서 추가 안내해 드립니다.'] }
-};
+const NOTICE_DETAILS = {};
 
 const SOCIAL_FEED_PATH = 'social-feed.json';
 
@@ -377,8 +370,12 @@ function setupNoticeFilter() {
   const noticeSearchButton = document.querySelector('.notice-search-button');
   const noticeType = document.querySelector('#notice-type');
 
+  if (!noticeRows.length) {
+    if (noticeEmpty) noticeEmpty.hidden = false;
+    return;
+  }
+
   const filterNotices = () => {
-    if (!noticeRows.length) return;
     const keyword = noticeSearchInput ? noticeSearchInput.value.trim().toLowerCase() : '';
     const type = noticeType ? noticeType.value : '전체';
     let visibleCount = 0;
@@ -410,8 +407,16 @@ function setupNoticeDetail() {
 
   if (!(noticeTitle && noticeCategory && noticeDate && noticeViews && noticeBody)) return;
   const params = new URLSearchParams(window.location.search);
-  const id = params.get('id') || '6';
-  const detail = NOTICE_DETAILS[id] || NOTICE_DETAILS['6'];
+  const id = params.get('id') || '';
+  const detail = NOTICE_DETAILS[id];
+  if (!detail) {
+    noticeCategory.textContent = '공지사항';
+    noticeTitle.textContent = '등록된 공지사항이 없습니다.';
+    noticeDate.textContent = '등록일 -';
+    noticeViews.textContent = '조회수 -';
+    noticeBody.innerHTML = '<p>새 공지사항은 등록 후 이 페이지에서 바로 확인하실 수 있습니다.</p>';
+    return;
+  }
   noticeCategory.textContent = detail.category;
   noticeTitle.textContent = detail.title;
   noticeDate.textContent = `등록일 ${detail.date}`;
