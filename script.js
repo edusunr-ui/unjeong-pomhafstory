@@ -36,7 +36,6 @@ function renderSiteChrome() {
                   <h3>Academy</h3>
                   <a href="company.html" data-nav-page="company">학원 소개</a>
                   <a href="principal-greeting.html" data-nav-page="principal">대표원장 인사말</a>
-                  <a href="results.html" data-nav-page="results">성과/후기</a>
                 </section>
               </div>
             </div>
@@ -57,12 +56,6 @@ function renderSiteChrome() {
                   <a href="class-features.html#math-system" data-nav-page="features">수학 커리큘럼</a>
                   <a href="class-features.html#english-system" data-nav-page="features">영어 커리큘럼</a>
                 </section>
-                <section>
-                  <h3>Popular Search</h3>
-                  <a href="seo-unjeong-math.html">운정 수학학원</a>
-                  <a href="seo-unjeong-english.html">운정 영어학원</a>
-                  <a href="seo-unjeong-high-grades.html">운정 고등 내신학원</a>
-                </section>
               </div>
             </div>
           </div>
@@ -73,12 +66,11 @@ function renderSiteChrome() {
                 <section>
                   <h3>Community</h3>
                   <a href="notices.html" data-nav-page="notices">공지사항</a>
-                  <a href="stories.html" data-nav-page="stories">학습 이야기</a>
                 </section>
                 <section>
                   <h3>SNS</h3>
-                  <a href="blog.html" data-nav-page="blog">블로그</a>
-                  <a href="sns.html" data-nav-page="sns">인스타그램</a>
+                  <a href="https://blog.naver.com/edusun100" target="_blank" rel="noreferrer">블로그</a>
+                  <a href="https://www.instagram.com/hsarspom/" target="_blank" rel="noreferrer">인스타그램</a>
                 </section>
               </div>
             </div>
@@ -89,15 +81,7 @@ function renderSiteChrome() {
               <div class="mega-panel__inner">
                 <section>
                   <h3>Admission</h3>
-                  <a href="learning-guide.html#admission" data-nav-page="guide">등록 절차</a>
                   <a href="consultation.html" data-nav-page="consultation">1:1 맞춤 상담</a>
-                  <a href="consultation.html" data-nav-page="consultation">설명회 예약</a>
-                </section>
-                <section>
-                  <h3>Visit</h3>
-                  <a href="https://map.naver.com/p/entry/place/1966039382" target="_blank" rel="noreferrer">1관</a>
-                  <a href="https://map.naver.com/p/entry/place/1947238069" target="_blank" rel="noreferrer">2관</a>
-                  <a href="https://map.naver.com/p/entry/place/1086621471" target="_blank" rel="noreferrer">3관</a>
                 </section>
               </div>
             </div>
@@ -111,18 +95,12 @@ function renderSiteChrome() {
   if (footer) {
     footer.className = 'footer footer--brand';
     footer.innerHTML = `
-      <div class="page-width footer__topline">
-        <div class="footer__social">
-          <a class="social-badge" href="https://blog.naver.com/edusun100" target="_blank" rel="noreferrer" aria-label="네이버 블로그">blog</a>
-          <a class="social-badge social-badge--image" href="https://www.instagram.com/hsarspom/" target="_blank" rel="noreferrer" aria-label="인스타그램"><img src="assets/instagram-white.png" alt="Instagram"></a>
-        </div>
-      </div>
       <div class="page-width footer__info-grid">
         <div><strong>운정 수학의힘∫외대HS어학원</strong><p>운정 수학학원 상담, 산내마을 수학 프로그램, 운정 영어학원 내신 대비 상담이 가능한 영·수·국·과 통합 학습 캠퍼스입니다.</p></div>
-        <div><strong>사업자등록번호</strong><p>(주)가상교육 123-45-67890</p></div>
-        <div><strong>상담 &amp; 문의</strong><p>입학상담 : 031-539-0909</p><p>대표문의 : 031-946-0909</p><p>FAX : 031-944-6289</p><p>E-mail : info@sample-academy.co.kr</p></div>
-        <div><strong>주소</strong><p>파주시 청암로 17번길 55 센트럴프라자 9층</p><p>파주시 교하로 87 삼성프라자 4층</p><p>파주시 청암로 17번길 55 센트럴프라자 8층</p></div>
+        <div><strong>영어 | 수학의힘외대HS1관학원</strong><p>대표자 : 손희경</p><p>사업자등록번호 : 481-94-00168</p><p>주소 : 경기도 파주시 청암로17번길 55 센트럴프라자 901~903호</p><p>전화 : 031-539-0909</p></div>
+        <div><strong>수학 | 수학의힘외대HS2관학원</strong><p>대표자 : 손성재</p><p>사업자등록번호 : 829-99-01379</p><p>주소 : 경기도 파주시 교하로 87 삼성프라자 401호</p><p>전화 : 031-946-0909</p></div>
       </div>
+      <div class="page-width footer__copyright">COPYRIGHT(C) UNJEONG POWER OF MATHEMATICS ∫ HUFS HS. ALL RIGHTS RESERVED.</div>
     `;
   }
 }
@@ -325,10 +303,23 @@ function enhanceHomePage() {
       'https://map.naver.com/p/entry/place/1966039382?c=15.00,0,0,0,dh&placePath=/ticket?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202604171646&locale=ko&svcName=map_pcv5&fromPanelNum=1&additionalHeight=76&timestamp=202604171646&locale=ko&svcName=map_pcv5',
       'https://map.naver.com/p/entry/place/1947238069?c=15.00,0,0,0,dh&placePath=/ticket?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202604171648&locale=ko&svcName=map_pcv5&fromPanelNum=1&additionalHeight=76&timestamp=202604171648&locale=ko&svcName=map_pcv5'
     ];
+    const kakaoLinks = [
+      'https://pf.kakao.com/_LrXqxj',
+      'https://pf.kakao.com/_Hhxolb',
+      'https://map.naver.com/p/entry/place/1086621471'
+    ];
     cards.forEach((card, index) => {
       const links = card.querySelector('.campus-card__links');
       if (!links) return;
-      const mapLink = Array.from(links.querySelectorAll('a')).find((link) => link.href.includes('map.naver.com'));
+      const allLinks = Array.from(links.querySelectorAll('a'));
+      const primaryLink = allLinks[0];
+      if (primaryLink) {
+        primaryLink.href = kakaoLinks[index] || primaryLink.href;
+        primaryLink.target = '_blank';
+        primaryLink.rel = 'noreferrer';
+        primaryLink.textContent = index < 2 ? '카톡 채널 상담' : '방문 위치 안내';
+      }
+      const mapLink = allLinks.find((link, linkIndex) => linkIndex > 0 && link.href.includes('map.naver.com'));
       if (mapLink) mapLink.textContent = '네이버지도 바로가기';
       let reserve = links.querySelector('.campus-card__reserve');
       if (index < reservationLinks.length) {
@@ -363,12 +354,6 @@ function enhanceHomePage() {
         <a class="tag-chip tag-chip--brand" href="hs-intro.html">외대HS어학원</a>
         <a class="tag-chip tag-chip--brand" href="science-intro.html">과학의힘</a>
         <a class="tag-chip tag-chip--brand" href="readingplus-intro.html">리딩플러스</a>
-        <a class="tag-chip" href="seo-unjeong-math.html">운정 수학학원</a>
-        <a class="tag-chip" href="seo-sannae-math.html">산내마을 수학학원</a>
-        <a class="tag-chip" href="seo-haeoreum-math.html">해오름마을 수학학원</a>
-        <a class="tag-chip" href="seo-unjeong-english.html">운정 영어학원</a>
-        <a class="tag-chip" href="seo-unjeong-middle-math.html">운정 중등 수학학원</a>
-        <a class="tag-chip" href="seo-unjeong-high-grades.html">운정 고등 내신학원</a>
       </div>
     `;
     if (footer) footer.before(section);

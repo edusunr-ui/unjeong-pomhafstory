@@ -197,7 +197,7 @@ img {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 420px;
+  min-width: 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -217,6 +217,8 @@ img {
 .mega-panel__inner {
   display: grid;
   grid-template-columns: repeat(2, minmax(190px, 1fr));
+  width: max-content;
+  max-width: min(92vw, 720px);
   overflow: hidden;
   border: 1px solid rgba(19, 38, 84, 0.1);
   border-top: 0;
@@ -225,12 +227,16 @@ img {
 }
 
 .mega-panel__inner--single {
-  grid-template-columns: minmax(300px, 360px);
+  grid-template-columns: minmax(220px, 280px);
+}
+
+.mega-panel__inner--triple {
+  grid-template-columns: repeat(2, minmax(180px, 240px));
 }
 
 .mega-panel__inner section {
-  min-height: 220px;
-  padding: 32px 36px;
+  min-height: auto;
+  padding: 28px 30px;
   border-right: 1px solid rgba(19, 38, 84, 0.08);
 }
 
@@ -844,9 +850,23 @@ img {
     padding: 22px 18px;
   }
 
+  .math-curriculum-section .section-heading,
+  .english-curriculum-section .section-heading {
+    gap: 14px;
+    margin-bottom: 22px;
+    text-align: left;
+  }
+
   .math-curriculum-section .section-heading h2,
   .english-curriculum-section .section-heading h2 {
     white-space: normal;
+  }
+
+  .math-curriculum-section .section-heading p:last-child,
+  .english-curriculum-section .section-heading p:last-child {
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1.75;
   }
 
   .curriculum-group__title {
@@ -854,7 +874,13 @@ img {
     flex-direction: column;
   }
 
+  .curriculum-table-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .curriculum-table {
+    min-width: 640px;
     font-size: 0.92rem;
   }
 
@@ -1461,8 +1487,8 @@ img {
 
 .footer__topline {
   display: flex;
-  justify-content: flex-end;
-  padding-bottom: 18px;
+  justify-content: center;
+  padding-bottom: 22px;
 }
 
 .footer__social {
@@ -1486,10 +1512,11 @@ img {
 
 .footer__info-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1.1fr 1.3fr;
-  gap: 28px;
-  padding-top: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.12);
+  align-items: start;
 }
 
 .footer__info-grid strong {
@@ -1499,10 +1526,24 @@ img {
   font-size: 1.1rem;
 }
 
+.footer__info-grid > div {
+  text-align: left;
+}
+
 .footer__info-grid p {
   margin: 0 0 8px;
   color: rgba(247,251,255,0.9);
   line-height: 1.7;
+}
+
+.footer__copyright {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  color: rgba(247,251,255,0.72);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
 }
 
 @media (max-width: 1240px) {
@@ -3599,6 +3640,43 @@ img {
   font-weight: 700;
 }
 
+.consultation-channel-grid,
+.consultation-campus-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.consultation-channel-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,248,255,0.96));
+}
+
+.consultation-link-list {
+  gap: 10px;
+}
+
+.consultation-link-list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(31,111,229,0.14), rgba(31,111,229,0.08));
+  border: 1px solid rgba(31,111,229,0.16);
+  color: #0f58c8;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(19,38,84,0.08);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+}
+
+.consultation-link-list a:hover,
+.consultation-link-list a:focus-visible {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #1f6fe5, #1658b5);
+  color: #fff;
+  box-shadow: 0 16px 30px rgba(19,38,84,0.16);
+}
+
 .hero-note-card {
   padding: 24px 28px;
   border-radius: 26px;
@@ -4722,6 +4800,51 @@ img {
 @media (max-width: 900px) {
   .math-study-steps span {
     white-space: normal;
+  }
+}
+
+@media (max-width: 720px) {
+  .math-study-method__panel {
+    overflow: hidden;
+  }
+
+  .math-study-steps {
+    gap: 12px;
+  }
+
+  .math-study-steps article {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .math-study-steps strong,
+  .math-study-steps span {
+    min-height: 0;
+  }
+
+  .math-study-steps strong {
+    padding: 14px 10px;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .math-study-steps span {
+    padding: 14px 14px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .math-study-method__panel > p {
+    font-size: 1.25rem;
+  }
+
+  .math-study-method__panel h2 {
+    font-size: clamp(2.3rem, 11vw, 3.6rem);
+    line-height: 1.05;
   }
 }
 /* HUFS HS brand introduction page */
@@ -8963,4 +9086,51 @@ img {
   .hs-unjeong-flow-list li::before {
     font-size: 0.88rem;
   }
+}
+
+@media (max-width: 720px) {
+  .hero--visual {
+    min-height: auto;
+    padding: 62px 0 38px;
+  }
+
+  .hero--visual .hero__layout,
+  .hero--visual .hero__content {
+    min-height: auto;
+  }
+
+  .hero--visual .hero__content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero--visual .hero__lead-wrap {
+    margin-inline: 0;
+  }
+
+  .math-program-heading,
+  .math-program-intro,
+  .math-core-heading,
+  .math-core-copy {
+    text-align: left;
+  }
+
+  .math-core-heading h2,
+  .math-paradigm-section h2 {
+    line-height: 1.12;
+  }
+
+  .math-core-copy blockquote {
+    line-height: 1.45;
+  }
+
+  .math-event-body h3,
+  .math-why-card h3 {
+    word-break: keep-all;
+  }
+}
+
+.hs-unjeong-page main,
+.hs-unjeong-page main *:not(img) {
+  font-family: 'Paperlogy', 'Malgun Gothic', sans-serif !important;
 }
