@@ -339,7 +339,7 @@ function enhanceHomePage() {
       <div class="section-heading section-heading--split">
         <div>
           <p class="section-heading__eyebrow">Popular Search</p>
-          <h2>학부모님이 많이 찾는 지역별 페이지</h2>
+          <h2>과목별 소개 페이지</h2>
         </div>
       </div>
       <div class="tag-chip-row">
@@ -490,11 +490,26 @@ function setupTestimonialSlider() {
   nextButton.addEventListener('click', () => moveSlider(1));
 }
 function setupImageModal() {
-  const modal = document.querySelector('#image-modal');
-  const modalImage = modal ? modal.querySelector('.image-modal__img') : null;
-  const modalClose = modal ? modal.querySelector('.image-modal__close') : null;
-  const modalBackdrop = modal ? modal.querySelector('.image-modal__backdrop') : null;
-  const zoomableImages = document.querySelectorAll('.project-showcase img, .award-gallery img, .academy-gallery img');
+  let modal = document.querySelector('#image-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.className = 'image-modal';
+    modal.id = 'image-modal';
+    modal.hidden = true;
+    modal.innerHTML = `
+      <button class="image-modal__close" type="button" aria-label="이미지 닫기">×</button>
+      <div class="image-modal__backdrop"></div>
+      <figure class="image-modal__figure">
+        <img class="image-modal__img" src="" alt="">
+      </figure>
+    `;
+    document.body.append(modal);
+  }
+
+  const modalImage = modal.querySelector('.image-modal__img');
+  const modalClose = modal.querySelector('.image-modal__close');
+  const modalBackdrop = modal.querySelector('.image-modal__backdrop');
+  const zoomableImages = document.querySelectorAll('.project-showcase img, .award-gallery img, .academy-gallery img, [data-zoomable]');
   const closeModal = () => {
     if (!modal) return;
     modal.hidden = true;
@@ -518,6 +533,29 @@ function setupImageModal() {
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !modal.hidden) closeModal();
   });
+}
+
+function setupScrollTopButton() {
+  let button = document.querySelector('.scroll-top-button');
+  if (!button) {
+    button = document.createElement('button');
+    button.className = 'scroll-top-button';
+    button.type = 'button';
+    button.setAttribute('aria-label', '맨 위로 이동');
+    button.innerHTML = '↑';
+    document.body.append(button);
+  }
+
+  const toggleVisibility = () => {
+    button.classList.toggle('is-visible', window.scrollY > 360);
+  };
+
+  button.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  toggleVisibility();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -584,5 +622,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupGallerySlider();
   setupTestimonialSlider();
   setupImageModal();
+  setupScrollTopButton();
   hydrateSocialFeed();
 });

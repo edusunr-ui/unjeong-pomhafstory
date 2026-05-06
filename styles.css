@@ -854,7 +854,8 @@ img {
   .english-curriculum-section .section-heading {
     gap: 14px;
     margin-bottom: 22px;
-    text-align: left;
+    text-align: center;
+    align-items: center;
   }
 
   .math-curriculum-section .section-heading h2,
@@ -867,6 +868,7 @@ img {
     max-width: none;
     font-size: 1rem;
     line-height: 1.75;
+    text-align: center;
   }
 
   .curriculum-group__title {
@@ -1215,6 +1217,7 @@ img {
     pointer-events: auto;
     transform: none;
     overflow: hidden;
+    background: #fff;
   }
 
   .nav-item.is-open .mega-panel {
@@ -1222,23 +1225,30 @@ img {
   }
 
   .mega-panel__inner,
-  .mega-panel__inner--single {
+  .mega-panel__inner--single,
+  .mega-panel__inner--triple {
     grid-template-columns: 1fr;
+    width: 100%;
+    max-width: none;
     border: 0;
     border-top: 1px solid rgba(19, 38, 84, 0.08);
     box-shadow: none;
+    background: #fff;
   }
 
   .mega-panel__inner section,
-  .mega-panel__inner--single section {
+  .mega-panel__inner--single section,
+  .mega-panel__inner--triple section {
     min-height: auto;
     padding: 18px 22px 12px;
     border-right: 0;
     border-bottom: 1px solid rgba(19, 38, 84, 0.08);
+    background: #fff;
   }
 
   .mega-panel__inner section:last-child,
-  .mega-panel__inner--single section:last-child {
+  .mega-panel__inner--single section:last-child,
+  .mega-panel__inner--triple section:last-child {
     border-bottom: 0;
   }
 
@@ -3716,18 +3726,95 @@ img {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.academy-guide-card {
-  min-height: 100%;
-  padding: 30px;
+.academy-guides-heading {
+  margin-top: 42px;
 }
 
-.academy-guide-card__actions {
-  margin-top: 22px;
+.academy-guide-preview {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,249,255,0.94));
+  border: 1px solid rgba(19,38,84,0.08);
+  box-shadow: 0 22px 46px rgba(12,39,70,0.08);
 }
 
-.academy-guide-card .button {
+.academy-guide-preview__button {
+  display: block;
   width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.academy-guide-preview__button img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 42px rgba(12,39,70,0.16);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.academy-guide-preview__button:hover img,
+.academy-guide-preview__button:focus-visible img {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 56px rgba(12,39,70,0.22);
+}
+
+.academy-guide-preview__body {
+  display: grid;
+  gap: 10px;
+}
+
+.academy-guide-preview__body strong {
+  font-size: 1.35rem;
+  color: var(--navy);
+}
+
+.academy-guide-preview__body p {
+  margin: 0;
+  color: #526077;
+  line-height: 1.75;
+}
+
+.scroll-top-button {
+  position: fixed;
+  right: 24px;
+  bottom: 26px;
+  z-index: 140;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #153b6f, #1f6fe5);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 800;
+  box-shadow: 0 18px 36px rgba(10, 27, 52, 0.24);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity .2s ease, visibility .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.scroll-top-button.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-button:hover,
+.scroll-top-button:focus-visible {
+  box-shadow: 0 24px 44px rgba(10, 27, 52, 0.32);
+  transform: translateY(-2px);
 }
 
 .hero-note-card {
@@ -4300,6 +4387,19 @@ img {
     white-space: normal;
   }
 
+  .parent-concern-section {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(180deg, #f6f8fc 0%, #ffffff 100%);
+  }
+
+  .problem-grid__title,
+  .solution-process,
+  .brand-visual-grid--solution {
+    position: relative;
+    z-index: 2;
+  }
+
   .testimonial-slider {
     padding: 0 44px;
   }
@@ -4866,7 +4966,7 @@ img {
   }
 
   .math-study-steps article {
-    grid-template-columns: 110px minmax(0, 1fr);
+    grid-template-columns: 132px minmax(0, 1fr);
     gap: 0;
     align-items: stretch;
   }
@@ -4888,7 +4988,15 @@ img {
     line-height: 1.55;
     white-space: normal;
     word-break: keep-all;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    display: block;
+    text-align: left;
+  }
+
+  .math-study-steps span b {
+    display: inline;
+    margin: 0;
+    white-space: normal;
   }
 
   .math-study-method__panel > p {
@@ -9200,5 +9308,17 @@ img {
 
   .consultation-campus-card strong {
     font-size: 1.75rem;
+  }
+
+  .academy-guide-preview {
+    padding: 18px;
+  }
+
+  .scroll-top-button {
+    right: 16px;
+    bottom: 18px;
+    width: 52px;
+    height: 52px;
+    font-size: 1.55rem;
   }
 }

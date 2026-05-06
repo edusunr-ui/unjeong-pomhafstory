@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">수학의힘 운정본원 입학안내서 표지</title>
+  <desc id="desc">수학의힘 운정본원 입학안내서를 소개하는 이미지 표지</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2340"/>
+      <stop offset="100%" stop-color="#1f6fe5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1600" rx="56" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1056" height="1456" rx="40" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)"/>
+  <text x="120" y="190" fill="#d9e6ff" font-size="42" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif" letter-spacing="4">UNJEONG POWER OF MATH</text>
+  <text x="120" y="360" fill="#ffffff" font-size="118" font-weight="700" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">수학의힘</text>
+  <text x="120" y="500" fill="#ffffff" font-size="86" font-weight="700" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">운정본원 입학안내서</text>
+  <text x="120" y="640" fill="#cfe0ff" font-size="52" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">상위권 수학 시스템, 반배정, T-관리, 운영 기준</text>
+  <rect x="120" y="760" width="960" height="2" fill="rgba(255,255,255,0.24)"/>
+  <text x="120" y="890" fill="#ffffff" font-size="62" font-weight="700" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">학년별 커리큘럼</text>
+  <text x="120" y="1000" fill="#ffffff" font-size="62" font-weight="700" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">강의식 · 개별진도 클래스</text>
+  <text x="120" y="1110" fill="#ffffff" font-size="62" font-weight="700" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">실제 운영 시스템 안내</text>
+  <rect x="120" y="1260" width="420" height="120" rx="60" fill="#ffffff"/>
+  <text x="176" y="1337" fill="#0f2340" font-size="52" font-weight="700" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">이미지 확대 보기</text>
+</svg>
